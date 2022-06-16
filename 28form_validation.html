@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+    <form >
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" pattern="[a-zA-z-_]{4,24}" required><br>
+        <label for="email">email</label>
+        <input type="email" name="email" id="email" pattern="(\w\.?)+@[\w\.-]+\.\w{2,4}" required><br>
+        <label for="password">password</label>
+        <input type="password" name="password" id="password" pattern="[a-zA-z0-9][a-zA-z-_]{6,24}" required><br>
+        <button>submit</button>
+
+    </form>
+</body>
+</html>

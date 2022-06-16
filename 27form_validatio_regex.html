@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <script src="https://kit.fontawesome.com/9b8091767f.js" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="styles.css"> 
+</style>
+<script type="text/javascript">
+    function validateform() {
+        var username = document.getElementById("Username");
+        var email = document.getElementById("Email");
+        var pass = document.getElementById("password");
+        var cpass = document.getElementById("confirm_password");
+        if (username.value == "") {
+            window.alert("Enter username");
+            username.focus();
+            return false;
+        }
+        if (email.value == "") {
+            window.alert("Enter email address");
+            email.focus();
+            return false;
+        }
+        if (username.value == "" || username.value.length < 3 || username.value.length > 30) {
+            window.alert("Enter correct username");
+            uname.focus();
+            return false;
+        }
+        if (pass.value == "") {
+            window.alert("Enter password");
+            pass.focus();
+            return false;
+        }
+        if (cpass.value == "") {
+            window.alert("Enter confirm password");
+            cpass.focus();
+            return false;
+        }
+        if (pass.value != cpass.value) {
+            window.alert("Passwords don't match");
+            pass.focus();
+            return false;
+        }
+        var email_re =/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
+        if (!email_re.test(email.value)) {
+            window.alert("Improper email address");
+            email.style.border = "red solid 3px";
+            return false;
+        }
+        var username_re = /^[A-Za-z][A-Za-z0-9_]{7,29}$/;
+        if (!username_re.test(username.value)) {
+            window.alert("Incorrect username format, username must contain only alphabets and digits");
+            username.style.border = "red solid 3px";
+            return false;
+        }
+    }
+</script>
+</head>
+<body>
+    <center>
+ <h1>BookThrift</h1>
+ <form name="myform" method=[POST,GET] action="home.html" class="register">
+ <br>
+ <label for="Username"><strong>Enter the Username:</strong></label><br>
+ <input type="text" id="Username" name="Username" required><br><br>
+ <label for="Email"><strong>Email id:</strong></label><br>
+ <input type="text" id="Email" name="Email" required><br><br>
+ <label for="password"><strong>Password:</strong></label><br>
+ <input type="password" id="password" name="password" required><br><br>
+ <label for="password"><strong>Confirm Password:</strong></label><br>
+ <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+ <input type="submit" onclick="validateform()" value="Register"><br><br>
+
+ </form>
+ </center>
+</body>
+</html>
+
+<!-- ^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$ -->
