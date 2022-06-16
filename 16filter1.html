@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Simple Calculator</title>
+    <style>
+        body{
+            font-family: Arial;
+        }
+        table{
+            border-collapse:collapse;
+        }
+        td{
+            border:1px solid black;
+            padding:5px;
+        }
+        th{
+            border:1px solid black;
+            padding:5px;
+            text-align:left;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="myModule">
+        <div ng-controller="myController">
+            search:<input type="text" placeholder="Search employees" ng-model="searchText.city">
+            <br>
+            <br>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Salary</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="employee in employees |filter:searchText">
+                        <td>{{employee.name}}</td>
+                        <td>{{employee.gender}}</td>
+                        <td>{{employee.salary}}</td>
+                        <td>{{employee.city}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        var app=angular.module("myModule",[])
+        .controller("myController",function($scope){
+            var employees=[
+                {name:"Ram",gender:"Male",salary:55000,city:"Chennai"},
+                {name:"Sita",gender:"Female",salary:68000,city:"Bangalore"},
+                {name:"Raj",gender:"Male",salary:75000,city:"Mumbai"},
+                {name:"Rama",gender:"Male",salary:30000,city:"Delhi"},
+                {name:"Reena",gender:"Female",salary:50000,city:"Chennai"},
+            ];
+            $scope.employees=employees;
+        });
+    </script>
+</body>
+</html>

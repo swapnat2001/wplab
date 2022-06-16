@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Simple Calculator</title>
+</head>
+<body ng-app="">
+    <h1>Simple Calculator</h1>
+    <table  border="1">
+        <tr>
+            <td>Enter number 1</td>
+            <td><input type="number" ng-model="n1"></td>
+        </tr>
+        <tr>
+            <td>Enter number 2</td>
+            <td><input type="number" ng-model="n2"></td>
+        </tr>
+        <tr>
+            <td>Addition</td>
+            <td>{{n1+n2}}</td>
+        </tr>
+        <tr>
+            <td >Substraction</td>
+            <td >{{n1-n2}}</td>
+        </tr>
+        <tr>
+            <td>Multiplication</td>
+            <td >{{n1*n2}}</td>
+        </tr>
+        <tr>
+            <td>Division</td>
+            <td >{{n1/n2}}</td>
+        </tr>
+    </table>
+</body>
+</html>

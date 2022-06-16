@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"> </script> 
+
+    <title>Component,service and controllers</title>
+</head>
+<body>
+    <h2>Angular js sample application</h2>
+    <div ng-app="mainapp" ng-controller="studentController">
+        <table border="0">
+            <tr>
+                <td>Enter first name:</td>
+                <td><input type="text" ng-model="student.firstname"></td>
+            </tr>
+            <tr>
+                <td>Enter last name:</td>
+                <td><input type="text" ng-model="student.lastname"></td>
+            </tr>
+            <tr>
+                <td>Enter fees:</td>
+                <td><input type="text" ng-model="student.fees"></td>
+            </tr>
+            <tr>
+                <td>Enter subject:</td>
+                <td><input type="text" ng-model="subjectname"></td>
+            </tr>
+
+        </table>
+        <br>
+        <table border="0">
+            <tr>
+                <td>Name in Upper case:</td>
+                <td>{{student.fullname()|uppercase}}</td>
+            </tr>
+            <tr>
+                <td>Name in Lower case:</td>
+                <td>{{student.fullname()|lowercase}}</td>
+            </tr>
+            <tr>
+                <td>Fees:</td>
+                <td>{{student.fees|currency}}</td>
+            </tr>
+            <tr>
+                <td>Subject:</td>
+                <td>
+                    <ul>
+                        <li ng-repeat="subject in student.subjects | filter:subjectname|orderBy:'marks'">
+                        {{ subject.name + ', marks:' + subject.marks }} 
+                    </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var app=angular.module("mainapp",[]);
+        app.controller("studentController",function($scope){
+            $scope.student={
+                firstname:"Swapna",
+                lastname:"T",
+                fees:500,
+                subjects:[{name:'Physics',marks:70},{name:'Chemistry',marks:80},{name:'Math',marks:65}],
+                fullname:function(){
+                    var stobj;
+                    stobj=$scope.student;
+                    return stobj.firstname+" "+stobj.lastname;
+                }
+            };
+        });
+    </script>
+</body>
+</html>
