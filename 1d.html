@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* borders csss */
+        p.dotted {
+            border-style: dotted;
+            border-width: 5px;
+        }
+        p.dashed {
+            border-style: dashed;
+            border-width: medium;
+        }
+        p.solid {
+            border-style: solid;
+            border-width: thick;
+        }
+        p.double {
+            border-style: double;
+            border-color: green;
+        }
+        p.groove {
+            border-top-style: dotted;
+            border-right-style: solid;
+            border-bottom-style: dotted;
+            border-left-style: solid;
+        }
+        p.ridge {
+            border: 5px ridge red;
+        }
+        p.inset {
+            border-style: inset;
+            border-radius: 5px;
+        }
+        p.outset {
+            border-style: outset;
+        }
+        p.none {
+            border-style: none;
+        }
+        p.hidden {
+            border-style: hidden;
+        }
+        p.mix {
+            border-style: dotted dashed solid double;
+        }
+        /* text-effects css */
+        p.test1 {
+  white-space: nowrap; 
+  width: 200px; 
+  border: 1px solid #000000;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+p.test2 {
+  white-space: nowrap; 
+  width: 200px; 
+  border: 1px solid #000000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+p.test2:hover {
+  overflow: visible;
+}
+p.test3{
+  width: 11em; 
+  border: 1px solid #000000;
+  word-wrap: break-word;
+}
+p.test4{
+  width: 140px; 
+  border: 1px solid #000000;
+  word-break: keep-all;
+}
+
+p.test5{
+  width: 140px; 
+  border: 1px solid #000000;
+  word-break: break-all;
+}
+p.test6 {
+  writing-mode: horizontal-tb; 
+}
+
+span.test7 {
+  writing-mode: vertical-rl; 
+}
+
+p.test8 {
+  writing-mode: vertical-rl; 
+}
+/* animation css */
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  from {background-color: red;}
+  to {background-color: yellow;}
+}
+div.id1{
+    width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example2;
+  animation-duration: 4s;
+}
+@keyframes example2 {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+div.id2{
+    width: 100px;
+  height: 100px;
+  background-color: lightblue;
+  position: relative;
+  animation-name: example3;
+  animation-duration: 4s;
+}
+@keyframes example3 {
+    0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+div.id3{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example4;
+  animation-duration: 4s;
+  animation-delay: 2s;
+}
+
+@keyframes example4 {
+  0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+div.id4{
+    width: 100px;
+  height: 100px;
+  background-color: red;
+  position: relative;
+  animation-name: example5;
+  animation-duration: 4s;
+  animation-iteration-count: 3;
+}
+
+@keyframes example5 {
+    0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+/* transition css */
+/* div {
+  width: 100px;
+  height: 100px;
+  background: green;
+  transition: width 2s,height 4s;
+  transition-delay: 1s;
+  
+}
+
+
+div.id11{
+    width: 100px;
+  height: 100px;
+  background: yellow;
+  transition: width 2s, height 4s;
+}
+div.id11:hover{
+    width: 300px;
+  height: 300px;
+}
+#i1 {transition-timing-function: linear;}
+#i2 {transition-timing-function: ease;}
+#i3 {transition-timing-function: ease-in;}
+#i4 {transition-timing-function: ease-out;}
+#i5 {transition-timing-function: ease-in-out;} */
+
+    </style>
+</head>
+<body>
+    <h1>Borders</h1>
+    <h2>The border-style Property</h2>
+    <p>This property specifies what kind of border to display:</p>
+
+    <p class="dotted">A dotted border.</p>
+    <p class="dashed">A dashed border.</p>
+    <p class="solid">A solid border.</p>
+    <p class="double">A double border.</p>
+    <p class="groove">A groove border.</p>
+    <p class="ridge">A ridge border.</p>
+    <p class="inset">An inset border.</p>
+    <p class="outset">An outset border.</p>
+    <p class="none">No border.</p>
+    <p class="hidden">A hidden border.</p>
+    <p class="mix">A mixed border.</p>
+    <hr>
+    <h1>Text effects</h1>
+    <h1>The text-overflow Property</h1>
+<p>The following two paragraphs contains a long text that will not fit in the box.</p>
+
+<h2>text-overflow: clip:</h2>
+<p class="test1">This is some long text that will not fit in the box</p>
+
+<h2>text-overflow: ellipsis:</h2>
+<p class="test2">This is some long text that will not fit in the box</p>
+
+<h2>word wrap property</h2>
+<p class="test3">This is some long text that will not fit in the box</p>
+<p class="test4">This paragraph contains some text. This line will-break-at-hyphens.</p>
+
+<p class="test5">This paragraph contains some text. The lines will break at any character.</p>
+
+<h1>The writing-mode Property</h1>
+
+<p class="test6">Some text with default writing-mode.</p>
+
+<p>Some text with a span element with a <span class="test7">vertical-rl</span> writing-mode.</p>
+
+<p class="test8">Some text with writing-mode: vertical-rl.</p>
+<hr>
+<hr>
+
+<h1>Animations</h1>
+<h1>CSS Animation</h1>
+
+<div></div>
+
+<p><b>Note:</b> When an animation is finished, it goes back to its original style.</p>
+
+<div class="id1"></div>
+
+<p><b>Note:</b> When an animation is finished, it goes back to its original style.</p>
+
+<div class="id2"></div>
+
+<p><b>Note:</b>  is finished, it goes back to its original style.</p>
+
+
+<div class="id3"></div>
+
+<p><b>Note:</b>  is finished, it goes back to its original style.</p>
+
+<div class="id4"></div>
+
+<p><b>Note:</b>  is finished, it goes back to its original style.</p>
+<hr>
+<hr>
+<!-- <h1>Transitions</h1>
+<h1>The transition Property</h1>
+
+<p>Hover over the div element below, to see the transition effect:</p>
+<div></div>
+<br>
+<div class="id1"></div>
+<br>
+<div id="div1">linear</div><br>
+<div id="div2">ease</div><br>
+<div id="div3">ease-in</div><br>
+<div id="div4">ease-out</div><br>
+<div id="div5">ease-in-out</div><br> -->
+
+
+</body>
+</html>
