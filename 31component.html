@@ -1,0 +1,89 @@
+<!-- Simple Component Creation -->
+
+<!-- <html>
+ <head></head>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+ <body>
+    <div ng-app="myApp"> 
+    <hello></hello> 
+    </div>
+    <script>
+        angular.module('myApp',[])
+        .component("hello",{
+            template:"Hello world!!"
+        });
+    </script>
+ </body>
+</html> -->
+
+
+<!-- Simple Component Creation with controller  -->
+<!-- <html>
+ <head></head>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+ <body>
+
+ <div ng-app="myApp"> 
+ <hello></hello> 
+ </div>
+ <script>
+     angular.module('myApp',[])
+     .component("hello",{
+         template:"Hello ,I'm {{$ctrl.myName}}!",
+         bindings:{name:'@'},
+         controller:function(){
+             this.myName='web';
+         }
+     });
+ </script>
+ </body>
+</html -->
+
+
+<!-- Simple Component Creation with form input type -->
+
+<html>
+ <head></head>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+ <body>
+ <div ng-app="myApp"> 
+ <hello></hello> 
+ </div>
+ <script>
+     angular.module('myApp', []) 
+.component("hello",{ 
+ template: `User Name<input type="text" ng-model="username"> 
+ <br> <br>
+ <p>Username : {{username}}</p>
+ <br><br>
+ Password<input type="text" ng-model="pass">
+ <br> <br> 
+ <p>Password :{{pass}}</p> `
+ 
+});
+ </script>
+ </body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<p>Change the value of the input field:</p>
+
+<div ng-app="" ng-init="myCol='lightblue'">
+
+<input style="background-color:{{myCol}}" ng-model="myCol">
+
+</div>
+
+<p>AngularJS resolves the expression and returns the result.</p>
+
+<p>The background color of the input box will be whatever you write in the input field.</p>
+
+</body>
+</html>

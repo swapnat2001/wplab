@@ -1,0 +1,21 @@
+<!-- //built-in service -interval -->
+
+<html>
+<head><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> 
+</head>
+<body> 
+<div ng-app="ser" ng-controller="sample"> 
+<p>The time is:</p> 
+<h1>{{theTime}}</h1> 
+</div> 
+<p>The $interval service runs a function every specified millisecond.</p> 
+<script> 
+var ser = angular.module('ser', []); 
+ser.controller('sample', function($scope, $interval) { 
+$interval(function () { 
+$scope.theTime = new Date().toLocaleTimeString(); 
+}, 1000); 
+}); 
+</script> 
+</body> 
+</html> 
